@@ -1,6 +1,6 @@
 ﻿namespace Punto_de_Ventas
 {
-    partial class Form1
+    partial class ConfigForm
     {
         /// <summary>
         /// Required designer variable.

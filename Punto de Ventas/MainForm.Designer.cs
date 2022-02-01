@@ -42,7 +42,7 @@
             this.BtnSales = new FontAwesome.Sharp.IconButton();
             this.BtnStocks = new FontAwesome.Sharp.IconButton();
             this.PnlViewer = new System.Windows.Forms.Panel();
-            this.PnlWindowsControls = new System.Windows.Forms.Panel();
+            this.PnlWindowControls = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.BtnMin = new System.Windows.Forms.Button();
             this.BtnMax = new System.Windows.Forms.Button();
@@ -51,7 +51,7 @@
             this.PnlAccount.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PboxUserPicture)).BeginInit();
             this.PnlModules.SuspendLayout();
-            this.PnlWindowsControls.SuspendLayout();
+            this.PnlWindowControls.SuspendLayout();
             this.SuspendLayout();
             // 
             // PnlAccount
@@ -66,6 +66,7 @@
             this.PnlAccount.Name = "PnlAccount";
             this.PnlAccount.Size = new System.Drawing.Size(176, 202);
             this.PnlAccount.TabIndex = 0;
+            this.PnlAccount.MouseDown += new System.Windows.Forms.MouseEventHandler(this.movibleArea_MouseDown);
             // 
             // BtnConfig
             // 
@@ -79,6 +80,7 @@
             this.BtnConfig.Size = new System.Drawing.Size(54, 48);
             this.BtnConfig.TabIndex = 3;
             this.BtnConfig.UseVisualStyleBackColor = true;
+            this.BtnConfig.Click += new System.EventHandler(this.BtnConfig_Click);
             // 
             // BtnChangeUser
             // 
@@ -128,6 +130,7 @@
             this.PnlModules.Name = "PnlModules";
             this.PnlModules.Size = new System.Drawing.Size(180, 729);
             this.PnlModules.TabIndex = 1;
+            this.PnlModules.MouseDown += new System.Windows.Forms.MouseEventHandler(this.movibleArea_MouseDown);
             // 
             // BtnReport
             // 
@@ -145,12 +148,14 @@
             this.BtnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnReport.Location = new System.Drawing.Point(0, 452);
             this.BtnReport.Name = "BtnReport";
+            this.BtnReport.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.BtnReport.Size = new System.Drawing.Size(176, 50);
             this.BtnReport.TabIndex = 6;
             this.BtnReport.Text = "Reportes";
             this.BtnReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnReport.UseVisualStyleBackColor = true;
+            this.BtnReport.Click += new System.EventHandler(this.BtnReport_Click);
             // 
             // BtnPurchases
             // 
@@ -168,12 +173,14 @@
             this.BtnPurchases.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnPurchases.Location = new System.Drawing.Point(0, 402);
             this.BtnPurchases.Name = "BtnPurchases";
+            this.BtnPurchases.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.BtnPurchases.Size = new System.Drawing.Size(176, 50);
             this.BtnPurchases.TabIndex = 5;
             this.BtnPurchases.Text = "Compras";
             this.BtnPurchases.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnPurchases.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnPurchases.UseVisualStyleBackColor = true;
+            this.BtnPurchases.Click += new System.EventHandler(this.BtnPurchases_Click);
             // 
             // BtnSuppliers
             // 
@@ -191,12 +198,14 @@
             this.BtnSuppliers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnSuppliers.Location = new System.Drawing.Point(0, 352);
             this.BtnSuppliers.Name = "BtnSuppliers";
+            this.BtnSuppliers.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.BtnSuppliers.Size = new System.Drawing.Size(176, 50);
             this.BtnSuppliers.TabIndex = 4;
             this.BtnSuppliers.Text = "Proveedores";
             this.BtnSuppliers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnSuppliers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnSuppliers.UseVisualStyleBackColor = true;
+            this.BtnSuppliers.Click += new System.EventHandler(this.BtnSuppliers_Click);
             // 
             // BtnClients
             // 
@@ -214,12 +223,14 @@
             this.BtnClients.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnClients.Location = new System.Drawing.Point(0, 302);
             this.BtnClients.Name = "BtnClients";
+            this.BtnClients.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.BtnClients.Size = new System.Drawing.Size(176, 50);
             this.BtnClients.TabIndex = 3;
             this.BtnClients.Text = "Clientes";
             this.BtnClients.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnClients.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnClients.UseVisualStyleBackColor = true;
+            this.BtnClients.Click += new System.EventHandler(this.BtnClients_Click);
             // 
             // BtnSales
             // 
@@ -237,12 +248,14 @@
             this.BtnSales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnSales.Location = new System.Drawing.Point(0, 252);
             this.BtnSales.Name = "BtnSales";
+            this.BtnSales.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.BtnSales.Size = new System.Drawing.Size(176, 50);
             this.BtnSales.TabIndex = 2;
             this.BtnSales.Text = "Ventas";
             this.BtnSales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnSales.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnSales.UseVisualStyleBackColor = true;
+            this.BtnSales.Click += new System.EventHandler(this.BtnSales_Click);
             // 
             // BtnStocks
             // 
@@ -260,12 +273,14 @@
             this.BtnStocks.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnStocks.Location = new System.Drawing.Point(0, 202);
             this.BtnStocks.Name = "BtnStocks";
+            this.BtnStocks.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.BtnStocks.Size = new System.Drawing.Size(176, 50);
             this.BtnStocks.TabIndex = 1;
             this.BtnStocks.Text = "Productos";
             this.BtnStocks.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnStocks.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnStocks.UseVisualStyleBackColor = true;
+            this.BtnStocks.Click += new System.EventHandler(this.BtnStocks_Click);
             // 
             // PnlViewer
             // 
@@ -275,22 +290,24 @@
             this.PnlViewer.Name = "PnlViewer";
             this.PnlViewer.Size = new System.Drawing.Size(828, 694);
             this.PnlViewer.TabIndex = 2;
+            this.PnlViewer.MouseDown += new System.Windows.Forms.MouseEventHandler(this.movibleArea_MouseDown);
             // 
-            // PnlWindowsControls
+            // PnlWindowControls
             // 
-            this.PnlWindowsControls.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PnlWindowsControls.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.PnlWindowsControls.Controls.Add(this.button1);
-            this.PnlWindowsControls.Controls.Add(this.BtnMin);
-            this.PnlWindowsControls.Controls.Add(this.BtnMax);
-            this.PnlWindowsControls.Controls.Add(this.BtnClose);
-            this.PnlWindowsControls.Location = new System.Drawing.Point(854, 0);
-            this.PnlWindowsControls.Name = "PnlWindowsControls";
-            this.PnlWindowsControls.Size = new System.Drawing.Size(154, 36);
-            this.PnlWindowsControls.TabIndex = 3;
+            this.PnlWindowControls.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.PnlWindowControls.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.PnlWindowControls.Controls.Add(this.button1);
+            this.PnlWindowControls.Controls.Add(this.BtnMin);
+            this.PnlWindowControls.Controls.Add(this.BtnMax);
+            this.PnlWindowControls.Controls.Add(this.BtnClose);
+            this.PnlWindowControls.Location = new System.Drawing.Point(854, 0);
+            this.PnlWindowControls.Name = "PnlWindowControls";
+            this.PnlWindowControls.Size = new System.Drawing.Size(154, 36);
+            this.PnlWindowControls.TabIndex = 3;
             // 
             // button1
             // 
+            this.button1.Enabled = false;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumPurple;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -314,6 +331,7 @@
             this.BtnMin.Size = new System.Drawing.Size(33, 33);
             this.BtnMin.TabIndex = 0;
             this.BtnMin.UseVisualStyleBackColor = false;
+            this.BtnMin.Click += new System.EventHandler(this.BtnMin_Click);
             // 
             // BtnMax
             // 
@@ -327,6 +345,7 @@
             this.BtnMax.Size = new System.Drawing.Size(33, 33);
             this.BtnMax.TabIndex = 0;
             this.BtnMax.UseVisualStyleBackColor = false;
+            this.BtnMax.Click += new System.EventHandler(this.BtnMax_Click);
             // 
             // BtnClose
             // 
@@ -340,6 +359,7 @@
             this.BtnClose.Size = new System.Drawing.Size(33, 33);
             this.BtnClose.TabIndex = 0;
             this.BtnClose.UseVisualStyleBackColor = false;
+            this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // MainForm
             // 
@@ -347,14 +367,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(1008, 729);
-            this.Controls.Add(this.PnlWindowsControls);
+            this.ControlBox = false;
+            this.Controls.Add(this.PnlWindowControls);
             this.Controls.Add(this.PnlViewer);
             this.Controls.Add(this.PnlModules);
             this.Name = "MainForm";
+            this.LocationChanged += new System.EventHandler(this.MainForm_LocationChanged);
+            this.Layout += new System.Windows.Forms.LayoutEventHandler(this.MainForm_Layout);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.movibleArea_MouseDown);
             this.PnlAccount.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PboxUserPicture)).EndInit();
             this.PnlModules.ResumeLayout(false);
-            this.PnlWindowsControls.ResumeLayout(false);
+            this.PnlWindowControls.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -364,7 +388,7 @@
         private Panel PnlAccount;
         private Panel PnlModules;
         private Panel PnlViewer;
-        private Panel PnlWindowsControls;
+        private Panel PnlWindowControls;
         private Button BtnMin;
         private Button BtnMax;
         private Button BtnClose;
