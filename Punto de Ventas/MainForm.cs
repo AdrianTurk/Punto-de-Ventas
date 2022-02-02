@@ -1,9 +1,41 @@
 namespace Punto_de_Ventas
 {
     using System.Runtime.InteropServices; // for dll import
+
+
+
     public partial class MainForm : Form
     {
 
+        public class UserX
+        {
+            public string Name { get; set; }
+            public bool AllowModifyProfiles { get; set; }
+            public bool AllowSales { get; set; }
+            public bool AllowStocks { get; set; }
+            public bool AllowClients { get; set; }
+            public bool AllowSuppliers { get; set; }
+            public bool AllowPurchases { get; set; }
+            public bool AllowReports { get; set; }
+            public bool AllowRoleChange { get; set; }
+            public bool AllowUserChange { get; set; }
+
+            public UserX(string Name="Desconocido", bool IsSuperUser=false)
+            {
+                this.Name = Name;
+                this.AllowModifyProfiles = IsSuperUser;
+                this.AllowSales = IsSuperUser;
+                this.AllowStocks = IsSuperUser;
+                this.AllowClients = IsSuperUser;
+                this.AllowSuppliers = IsSuperUser;
+                this.AllowPurchases = IsSuperUser;
+                this.AllowReports = IsSuperUser;
+                this.AllowRoleChange = IsSuperUser;
+                this.AllowUserChange = IsSuperUser;
+
+            }
+
+        }
         //Win32API - Usadas para poder mover desde barra personalizada
 
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
@@ -19,27 +51,31 @@ namespace Punto_de_Ventas
         private Form? frmSuppliers = null;
         private Form? frmPurchases = null;
         private Form? frmReports = null;
+        public User LoggedUser = new("ALGUIEN",UserGrants.R_NONE);
 
         public MainForm()
         {
             InitializeComponent();
             this.PnlModules.SuspendLayout();
-
-            foreach (Button bt in this.PnlModules.Controls.OfType<Button>())  //agregado de borde lateral en botones
+            //agregado de borde lateral en botones
             {
-                Panel pnlMark = new();
+                foreach (Button bt in this.PnlModules.Controls.OfType<Button>())  
+                {
+                    Panel pnlMark = new();
 
-                pnlMark.Location = new Point(bt.Location.X, bt.Location.Y + 10);
-                //pnlMark.Location = new Point(200,200);
-                pnlMark.BackColor = System.Drawing.Color.MediumPurple;
-                pnlMark.Size = new System.Drawing.Size(8, 25);
-                this.PnlModules.Controls.Add(pnlMark);
-            }
-            foreach (Panel pnl in this.PnlModules.Controls.OfType<Panel>())
-            {
-                if (pnl.Name != "PnlAccount") pnl.BringToFront();//this.PnlModules.Controls.SetChildIndex(pnl, 0); //Forzar orden docking/bringtofront
+                    pnlMark.Location = new Point(bt.Location.X, bt.Location.Y + 10);
+                    //pnlMark.Location = new Point(200,200);
+                    pnlMark.BackColor = System.Drawing.Color.MediumPurple;
+                    pnlMark.Size = new System.Drawing.Size(8, 25);
+                    this.PnlModules.Controls.Add(pnlMark);
+                }
+                foreach (Panel pnl in this.PnlModules.Controls.OfType<Panel>())
+                {
+                    if (pnl.Name != "PnlAccount") pnl.BringToFront();//this.PnlModules.Controls.SetChildIndex(pnl, 0); //Forzar orden docking/bringtofront
+                }
             }
 
+            FormMainAccessUpdate(LoggedUser);
             this.PnlModules.ResumeLayout();
 
         }
@@ -83,14 +119,33 @@ namespace Punto_de_Ventas
 
         private void MainForm_Layout(object sender, LayoutEventArgs e)
         {
-            PnlViewer.Height = this.ClientRectangle.Height - PnlWindowControls.Height;
-            Screen curScreen = Screen.FromControl(this);
+            //Ajuste del panel central
+            {
+                PnlViewer.Height = this.ClientRectangle.Height - PnlWindowControls.Height;
+                Screen curScreen = Screen.FromControl(this);
 
-            if (WindowState == FormWindowState.Maximized)
-                PnlViewer.Width = curScreen.WorkingArea.Width - PnlViewer.Location.X;
-            else
-                PnlViewer.Width = this.ClientRectangle.Width - PnlViewer.Location.X;
-            PnlWindowControls.Location = new Point(PnlViewer.Location.X + PnlViewer.Width - PnlWindowControls.Width, 0);
+                if (WindowState == FormWindowState.Maximized)
+                    PnlViewer.Width = curScreen.WorkingArea.Width - PnlViewer.Location.X;
+                else
+                    PnlViewer.Width = this.ClientRectangle.Width - PnlViewer.Location.X;
+                PnlWindowControls.Location = new Point(PnlViewer.Location.X + PnlViewer.Width - PnlWindowControls.Width, 0);
+            }
+        }
+
+        private void FormMainAccessUpdate(User curr)
+        {
+            {
+                LblUserName.Text = curr.Name;
+                LblUserName.TextAlign = ContentAlignment.MiddleCenter;
+                
+                BtnClients.Enabled   = (curr.Grants & UserGrants.A_CLIENTVIEW) != 0;
+                BtnPurchases.Enabled = (curr.Grants & UserGrants.A_PURCHASESVIEW) != 0;
+                BtnReport.Enabled    = (curr.Grants & UserGrants.A_REPORTSVIEW) != 0;
+                BtnSales.Enabled     = (curr.Grants & UserGrants.A_SALESVIEW) != 0;
+                BtnStocks.Enabled    = (curr.Grants & UserGrants.A_STOCKVIEW) != 0;
+                BtnSuppliers.Enabled = (curr.Grants & UserGrants.A_SUPPLIERSVIEW) != 0;
+            }
+
         }
 
         private void MainForm_LocationChanged(object sender, EventArgs e)
@@ -155,8 +210,20 @@ namespace Punto_de_Ventas
         private void BtnConfig_Click(object sender, EventArgs e)
         {
             Form frmCfg = new ConfigForm();
-            //frmCfg.TopMost = true;
+            frmCfg.Location = new Point(this.Location.X + this.Width / 2 - frmCfg.Width / 2, this.Location.Y + 100);
             frmCfg.ShowDialog(this);
+        }
+
+        private void BtnChangeUser_Click(object sender, EventArgs e)
+        {
+            //TODO: Form de logueo
+            LoggedUser = new User("Somebody",UserGrants.R_SELLER);
+            FormMainAccessUpdate(LoggedUser);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }

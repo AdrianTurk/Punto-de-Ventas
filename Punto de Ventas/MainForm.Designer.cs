@@ -56,7 +56,6 @@
             // 
             // PnlAccount
             // 
-            this.PnlAccount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.PnlAccount.Controls.Add(this.BtnConfig);
             this.PnlAccount.Controls.Add(this.BtnChangeUser);
             this.PnlAccount.Controls.Add(this.PboxUserPicture);
@@ -64,7 +63,7 @@
             this.PnlAccount.Dock = System.Windows.Forms.DockStyle.Top;
             this.PnlAccount.Location = new System.Drawing.Point(0, 0);
             this.PnlAccount.Name = "PnlAccount";
-            this.PnlAccount.Size = new System.Drawing.Size(176, 202);
+            this.PnlAccount.Size = new System.Drawing.Size(180, 202);
             this.PnlAccount.TabIndex = 0;
             this.PnlAccount.MouseDown += new System.Windows.Forms.MouseEventHandler(this.movibleArea_MouseDown);
             // 
@@ -74,10 +73,10 @@
             this.BtnConfig.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumPurple;
             this.BtnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnConfig.Image = ((System.Drawing.Image)(resources.GetObject("BtnConfig.Image")));
-            this.BtnConfig.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.BtnConfig.Location = new System.Drawing.Point(117, 152);
+            this.BtnConfig.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.BtnConfig.Location = new System.Drawing.Point(134, 163);
             this.BtnConfig.Name = "BtnConfig";
-            this.BtnConfig.Size = new System.Drawing.Size(54, 48);
+            this.BtnConfig.Size = new System.Drawing.Size(40, 30);
             this.BtnConfig.TabIndex = 3;
             this.BtnConfig.UseVisualStyleBackColor = true;
             this.BtnConfig.Click += new System.EventHandler(this.BtnConfig_Click);
@@ -88,12 +87,13 @@
             this.BtnChangeUser.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumPurple;
             this.BtnChangeUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnChangeUser.ForeColor = System.Drawing.Color.Lime;
-            this.BtnChangeUser.Location = new System.Drawing.Point(19, 152);
+            this.BtnChangeUser.Location = new System.Drawing.Point(47, 156);
             this.BtnChangeUser.Name = "BtnChangeUser";
-            this.BtnChangeUser.Size = new System.Drawing.Size(100, 48);
+            this.BtnChangeUser.Size = new System.Drawing.Size(81, 45);
             this.BtnChangeUser.TabIndex = 2;
             this.BtnChangeUser.Text = "Cambiar Usuario";
             this.BtnChangeUser.UseVisualStyleBackColor = true;
+            this.BtnChangeUser.Click += new System.EventHandler(this.BtnChangeUser_Click);
             // 
             // PboxUserPicture
             // 
@@ -117,7 +117,6 @@
             // 
             // PnlModules
             // 
-            this.PnlModules.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.PnlModules.Controls.Add(this.BtnReport);
             this.PnlModules.Controls.Add(this.BtnPurchases);
             this.PnlModules.Controls.Add(this.BtnSuppliers);
@@ -149,7 +148,7 @@
             this.BtnReport.Location = new System.Drawing.Point(0, 452);
             this.BtnReport.Name = "BtnReport";
             this.BtnReport.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BtnReport.Size = new System.Drawing.Size(176, 50);
+            this.BtnReport.Size = new System.Drawing.Size(180, 50);
             this.BtnReport.TabIndex = 6;
             this.BtnReport.Text = "Reportes";
             this.BtnReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -174,7 +173,7 @@
             this.BtnPurchases.Location = new System.Drawing.Point(0, 402);
             this.BtnPurchases.Name = "BtnPurchases";
             this.BtnPurchases.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BtnPurchases.Size = new System.Drawing.Size(176, 50);
+            this.BtnPurchases.Size = new System.Drawing.Size(180, 50);
             this.BtnPurchases.TabIndex = 5;
             this.BtnPurchases.Text = "Compras";
             this.BtnPurchases.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -199,7 +198,7 @@
             this.BtnSuppliers.Location = new System.Drawing.Point(0, 352);
             this.BtnSuppliers.Name = "BtnSuppliers";
             this.BtnSuppliers.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BtnSuppliers.Size = new System.Drawing.Size(176, 50);
+            this.BtnSuppliers.Size = new System.Drawing.Size(180, 50);
             this.BtnSuppliers.TabIndex = 4;
             this.BtnSuppliers.Text = "Proveedores";
             this.BtnSuppliers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -224,7 +223,7 @@
             this.BtnClients.Location = new System.Drawing.Point(0, 302);
             this.BtnClients.Name = "BtnClients";
             this.BtnClients.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BtnClients.Size = new System.Drawing.Size(176, 50);
+            this.BtnClients.Size = new System.Drawing.Size(180, 50);
             this.BtnClients.TabIndex = 3;
             this.BtnClients.Text = "Clientes";
             this.BtnClients.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -249,7 +248,7 @@
             this.BtnSales.Location = new System.Drawing.Point(0, 252);
             this.BtnSales.Name = "BtnSales";
             this.BtnSales.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BtnSales.Size = new System.Drawing.Size(176, 50);
+            this.BtnSales.Size = new System.Drawing.Size(180, 50);
             this.BtnSales.TabIndex = 2;
             this.BtnSales.Text = "Ventas";
             this.BtnSales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -274,7 +273,7 @@
             this.BtnStocks.Location = new System.Drawing.Point(0, 202);
             this.BtnStocks.Name = "BtnStocks";
             this.BtnStocks.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.BtnStocks.Size = new System.Drawing.Size(176, 50);
+            this.BtnStocks.Size = new System.Drawing.Size(180, 50);
             this.BtnStocks.TabIndex = 1;
             this.BtnStocks.Text = "Productos";
             this.BtnStocks.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -284,7 +283,6 @@
             // 
             // PnlViewer
             // 
-            this.PnlViewer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.PnlViewer.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PnlViewer.Location = new System.Drawing.Point(180, 35);
             this.PnlViewer.Name = "PnlViewer";
@@ -295,7 +293,6 @@
             // PnlWindowControls
             // 
             this.PnlWindowControls.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.PnlWindowControls.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.PnlWindowControls.Controls.Add(this.button1);
             this.PnlWindowControls.Controls.Add(this.BtnMin);
             this.PnlWindowControls.Controls.Add(this.BtnMax);
@@ -312,12 +309,13 @@
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumPurple;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(5, -1);
+            this.button1.Location = new System.Drawing.Point(9, -1);
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(33, 33);
             this.button1.TabIndex = 0;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // BtnMin
             // 
@@ -325,7 +323,7 @@
             this.BtnMin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumPurple;
             this.BtnMin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnMin.Image = ((System.Drawing.Image)(resources.GetObject("BtnMin.Image")));
-            this.BtnMin.Location = new System.Drawing.Point(43, -1);
+            this.BtnMin.Location = new System.Drawing.Point(47, -1);
             this.BtnMin.Margin = new System.Windows.Forms.Padding(0);
             this.BtnMin.Name = "BtnMin";
             this.BtnMin.Size = new System.Drawing.Size(33, 33);
@@ -339,7 +337,7 @@
             this.BtnMax.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumPurple;
             this.BtnMax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnMax.Image = ((System.Drawing.Image)(resources.GetObject("BtnMax.Image")));
-            this.BtnMax.Location = new System.Drawing.Point(79, -1);
+            this.BtnMax.Location = new System.Drawing.Point(83, -1);
             this.BtnMax.Margin = new System.Windows.Forms.Padding(0);
             this.BtnMax.Name = "BtnMax";
             this.BtnMax.Size = new System.Drawing.Size(33, 33);
@@ -353,7 +351,7 @@
             this.BtnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumPurple;
             this.BtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnClose.Image = ((System.Drawing.Image)(resources.GetObject("BtnClose.Image")));
-            this.BtnClose.Location = new System.Drawing.Point(115, -1);
+            this.BtnClose.Location = new System.Drawing.Point(119, -1);
             this.BtnClose.Margin = new System.Windows.Forms.Padding(0);
             this.BtnClose.Name = "BtnClose";
             this.BtnClose.Size = new System.Drawing.Size(33, 33);
