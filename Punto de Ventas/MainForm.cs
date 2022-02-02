@@ -138,12 +138,12 @@ namespace Punto_de_Ventas
                 LblUserName.Text = curr.Name;
                 LblUserName.TextAlign = ContentAlignment.MiddleCenter;
                 
-                BtnClients.Enabled   = (curr.Grants & UserGrants.A_CLIENTVIEW) != 0;
-                BtnPurchases.Enabled = (curr.Grants & UserGrants.A_PURCHASESVIEW) != 0;
-                BtnReport.Enabled    = (curr.Grants & UserGrants.A_REPORTSVIEW) != 0;
-                BtnSales.Enabled     = (curr.Grants & UserGrants.A_SALESVIEW) != 0;
-                BtnStocks.Enabled    = (curr.Grants & UserGrants.A_STOCKVIEW) != 0;
-                BtnSuppliers.Enabled = (curr.Grants & UserGrants.A_SUPPLIERSVIEW) != 0;
+                BtnClients.Enabled   = curr.Grants.HasFlag(UserGrants.A_CLIENTVIEW);
+                BtnPurchases.Enabled = curr.Grants.HasFlag(UserGrants.A_PURCHASESVIEW);
+                BtnReport.Enabled    = curr.Grants.HasFlag(UserGrants.A_REPORTSVIEW);
+                BtnSales.Enabled     = curr.Grants.HasFlag(UserGrants.A_SALESVIEW);
+                BtnStocks.Enabled    = curr.Grants.HasFlag(UserGrants.A_STOCKVIEW);
+                BtnSuppliers.Enabled = curr.Grants.HasFlag(UserGrants.A_SUPPLIERSVIEW);
             }
 
         }
@@ -217,7 +217,7 @@ namespace Punto_de_Ventas
         private void BtnChangeUser_Click(object sender, EventArgs e)
         {
             //TODO: Form de logueo
-            LoggedUser = new User("Somebody",UserGrants.R_SELLER);
+            LoggedUser = new User("The Admin is Here",UserGrants.R_ADMIN);
             FormMainAccessUpdate(LoggedUser);
         }
 

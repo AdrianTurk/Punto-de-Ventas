@@ -15,14 +15,12 @@ namespace Punto_de_Ventas
         public ConfigForm()
         {
             InitializeComponent();
-            BtnRoleAdd.Enabled = false;
-            
         }
 
         private void BtnExpand_Click(object sender, EventArgs e)
         {
             PnlRol.Visible = !PnlRol.Visible;
-            BtnExpand.Text= PnlRol.Visible? "▲" : "▼";
+            BtnExpand.Text= PnlRol.Visible? "▲ Permisos ▲" : "▼ Permisos ▼";
             //this.Height = this.Height -  ( PnlRol.Visible? 0 : PnlRol.Height);
         }
 
@@ -72,11 +70,21 @@ namespace Punto_de_Ventas
             MessageBox.Show("Not Implemented"); // TODO
         }
 
+        UserGrants currentGrants=UserGrants.R_NONE;
+
         private void ConfigForm_Load(object sender, EventArgs e)
         {
-            comboBox1.DataSource = LstRoles.Items;
             //TODO: Borrar este codigo de prueba - solo mantiene grans en 
-            LoadListGrants(((MainForm)this.Owner).LoggedUser.Grants);
+            currentGrants= ((MainForm)this.Owner).LoggedUser.Grants;
+
+            LoadListGrants(currentGrants);
+            bool isAdmin = currentGrants.HasFlag(UserGrants.R_ADMIN);
+            ChkListOptions.Enabled = isAdmin;
+            BtnUserAdd.Enabled = isAdmin;
+            BtnUserDelete.Enabled = isAdmin;
+            BtnExport.Enabled = isAdmin;
+            BtnImport.Enabled = isAdmin;
+
         }
 
         private void ChkListOptions_ItemCheck(object sender, ItemCheckEventArgs e)
@@ -86,6 +94,11 @@ namespace Punto_de_Ventas
                         LoadListGrants(
                             (UserGrants) ChkListOptions.Items[e.Index],
                             false );
+        }
+
+        private void BtnUserDelete_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

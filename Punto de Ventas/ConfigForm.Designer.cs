@@ -31,10 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfigForm));
             this.PnlRol = new System.Windows.Forms.Panel();
             this.ChkListOptions = new System.Windows.Forms.CheckedListBox();
-            this.BtnRoleDelete = new FontAwesome.Sharp.IconButton();
-            this.BtnRoleAdd = new FontAwesome.Sharp.IconButton();
-            this.LstRoles = new System.Windows.Forms.ListBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.PnlFoot = new System.Windows.Forms.Panel();
             this.BtnImport = new FontAwesome.Sharp.IconButton();
             this.BtnExport = new FontAwesome.Sharp.IconButton();
@@ -44,14 +40,12 @@
             this.PnlBasic = new System.Windows.Forms.Panel();
             this.BtnUserDelete = new FontAwesome.Sharp.IconButton();
             this.BtnUserAdd = new FontAwesome.Sharp.IconButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.BtnChangePassword = new System.Windows.Forms.Button();
             this.BtnChangePicture = new System.Windows.Forms.Button();
             this.PboxUserPicture = new System.Windows.Forms.PictureBox();
             this.TxtUserEmail = new System.Windows.Forms.TextBox();
             this.LstUsers = new System.Windows.Forms.ListBox();
             this.TxtUserName = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -66,14 +60,10 @@
             this.PnlRol.AutoSize = true;
             this.PnlRol.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.PnlRol.Controls.Add(this.ChkListOptions);
-            this.PnlRol.Controls.Add(this.BtnRoleDelete);
-            this.PnlRol.Controls.Add(this.BtnRoleAdd);
-            this.PnlRol.Controls.Add(this.LstRoles);
-            this.PnlRol.Controls.Add(this.label2);
             this.PnlRol.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PnlRol.Location = new System.Drawing.Point(0, 173);
             this.PnlRol.Name = "PnlRol";
-            this.PnlRol.Size = new System.Drawing.Size(624, 220);
+            this.PnlRol.Size = new System.Drawing.Size(624, 190);
             this.PnlRol.TabIndex = 10;
             this.PnlRol.Visible = false;
             // 
@@ -82,64 +72,16 @@
             this.ChkListOptions.BackColor = System.Drawing.SystemColors.Control;
             this.ChkListOptions.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ChkListOptions.CheckOnClick = true;
-            this.ChkListOptions.ColumnWidth = 200;
+            this.ChkListOptions.ColumnWidth = 180;
             this.ChkListOptions.FormattingEnabled = true;
             this.ChkListOptions.IntegralHeight = false;
-            this.ChkListOptions.Location = new System.Drawing.Point(197, 14);
+            this.ChkListOptions.Location = new System.Drawing.Point(72, 15);
             this.ChkListOptions.MultiColumn = true;
             this.ChkListOptions.Name = "ChkListOptions";
-            this.ChkListOptions.Size = new System.Drawing.Size(400, 200);
+            this.ChkListOptions.Size = new System.Drawing.Size(540, 158);
             this.ChkListOptions.Sorted = true;
             this.ChkListOptions.TabIndex = 7;
             this.ChkListOptions.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.ChkListOptions_ItemCheck);
-            // 
-            // BtnRoleDelete
-            // 
-            this.BtnRoleDelete.IconChar = FontAwesome.Sharp.IconChar.Times;
-            this.BtnRoleDelete.IconColor = System.Drawing.Color.OrangeRed;
-            this.BtnRoleDelete.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnRoleDelete.IconSize = 24;
-            this.BtnRoleDelete.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BtnRoleDelete.Location = new System.Drawing.Point(107, 167);
-            this.BtnRoleDelete.Name = "BtnRoleDelete";
-            this.BtnRoleDelete.Size = new System.Drawing.Size(48, 37);
-            this.BtnRoleDelete.TabIndex = 6;
-            this.BtnRoleDelete.UseVisualStyleBackColor = true;
-            // 
-            // BtnRoleAdd
-            // 
-            this.BtnRoleAdd.IconChar = FontAwesome.Sharp.IconChar.Plus;
-            this.BtnRoleAdd.IconColor = System.Drawing.Color.Green;
-            this.BtnRoleAdd.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnRoleAdd.IconSize = 24;
-            this.BtnRoleAdd.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BtnRoleAdd.Location = new System.Drawing.Point(44, 167);
-            this.BtnRoleAdd.Name = "BtnRoleAdd";
-            this.BtnRoleAdd.Size = new System.Drawing.Size(48, 37);
-            this.BtnRoleAdd.TabIndex = 6;
-            this.BtnRoleAdd.UseVisualStyleBackColor = true;
-            // 
-            // LstRoles
-            // 
-            this.LstRoles.FormattingEnabled = true;
-            this.LstRoles.ItemHeight = 15;
-            this.LstRoles.Items.AddRange(new object[] {
-            "A",
-            "B",
-            "C"});
-            this.LstRoles.Location = new System.Drawing.Point(30, 30);
-            this.LstRoles.Name = "LstRoles";
-            this.LstRoles.Size = new System.Drawing.Size(140, 124);
-            this.LstRoles.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 15);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Roles:";
             // 
             // PnlFoot
             // 
@@ -149,7 +91,7 @@
             this.PnlFoot.Controls.Add(this.BtnCancel);
             this.PnlFoot.Controls.Add(this.BtnApply);
             this.PnlFoot.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PnlFoot.Location = new System.Drawing.Point(0, 393);
+            this.PnlFoot.Location = new System.Drawing.Point(0, 363);
             this.PnlFoot.Name = "PnlFoot";
             this.PnlFoot.Size = new System.Drawing.Size(624, 48);
             this.PnlFoot.TabIndex = 12;
@@ -228,11 +170,11 @@
             // 
             // BtnExpand
             // 
-            this.BtnExpand.Location = new System.Drawing.Point(305, 146);
+            this.BtnExpand.Location = new System.Drawing.Point(213, 136);
             this.BtnExpand.Name = "BtnExpand";
-            this.BtnExpand.Size = new System.Drawing.Size(27, 23);
+            this.BtnExpand.Size = new System.Drawing.Size(109, 23);
             this.BtnExpand.TabIndex = 7;
-            this.BtnExpand.Text = "▼";
+            this.BtnExpand.Text = "▼ Permisos ▼";
             this.BtnExpand.UseVisualStyleBackColor = true;
             this.BtnExpand.Click += new System.EventHandler(this.BtnExpand_Click);
             // 
@@ -242,14 +184,12 @@
             this.PnlBasic.Controls.Add(this.BtnUserDelete);
             this.PnlBasic.Controls.Add(this.BtnUserAdd);
             this.PnlBasic.Controls.Add(this.BtnExpand);
-            this.PnlBasic.Controls.Add(this.comboBox1);
             this.PnlBasic.Controls.Add(this.BtnChangePassword);
             this.PnlBasic.Controls.Add(this.BtnChangePicture);
             this.PnlBasic.Controls.Add(this.PboxUserPicture);
             this.PnlBasic.Controls.Add(this.TxtUserEmail);
             this.PnlBasic.Controls.Add(this.LstUsers);
             this.PnlBasic.Controls.Add(this.TxtUserName);
-            this.PnlBasic.Controls.Add(this.label4);
             this.PnlBasic.Controls.Add(this.label3);
             this.PnlBasic.Controls.Add(this.label5);
             this.PnlBasic.Controls.Add(this.label1);
@@ -266,11 +206,14 @@
             this.BtnUserDelete.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnUserDelete.IconSize = 24;
             this.BtnUserDelete.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BtnUserDelete.Location = new System.Drawing.Point(107, 125);
+            this.BtnUserDelete.Location = new System.Drawing.Point(173, 89);
+            this.BtnUserDelete.Margin = new System.Windows.Forms.Padding(0);
             this.BtnUserDelete.Name = "BtnUserDelete";
-            this.BtnUserDelete.Size = new System.Drawing.Size(48, 37);
+            this.BtnUserDelete.Padding = new System.Windows.Forms.Padding(2, 5, 0, 0);
+            this.BtnUserDelete.Size = new System.Drawing.Size(32, 34);
             this.BtnUserDelete.TabIndex = 7;
             this.BtnUserDelete.UseVisualStyleBackColor = true;
+            this.BtnUserDelete.Click += new System.EventHandler(this.BtnUserDelete_Click);
             // 
             // BtnUserAdd
             // 
@@ -279,23 +222,17 @@
             this.BtnUserAdd.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnUserAdd.IconSize = 24;
             this.BtnUserAdd.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BtnUserAdd.Location = new System.Drawing.Point(44, 125);
+            this.BtnUserAdd.Location = new System.Drawing.Point(173, 52);
+            this.BtnUserAdd.Margin = new System.Windows.Forms.Padding(0);
             this.BtnUserAdd.Name = "BtnUserAdd";
-            this.BtnUserAdd.Size = new System.Drawing.Size(48, 37);
+            this.BtnUserAdd.Padding = new System.Windows.Forms.Padding(2, 5, 0, 0);
+            this.BtnUserAdd.Size = new System.Drawing.Size(32, 34);
             this.BtnUserAdd.TabIndex = 8;
             this.BtnUserAdd.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(245, 110);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 23);
-            this.comboBox1.TabIndex = 5;
-            // 
             // BtnChangePassword
             // 
-            this.BtnChangePassword.Location = new System.Drawing.Point(372, 110);
+            this.BtnChangePassword.Location = new System.Drawing.Point(338, 136);
             this.BtnChangePassword.Name = "BtnChangePassword";
             this.BtnChangePassword.Size = new System.Drawing.Size(99, 23);
             this.BtnChangePassword.TabIndex = 4;
@@ -323,9 +260,9 @@
             // 
             // TxtUserEmail
             // 
-            this.TxtUserEmail.Location = new System.Drawing.Point(245, 69);
+            this.TxtUserEmail.Location = new System.Drawing.Point(264, 99);
             this.TxtUserEmail.Name = "TxtUserEmail";
-            this.TxtUserEmail.Size = new System.Drawing.Size(226, 23);
+            this.TxtUserEmail.Size = new System.Drawing.Size(210, 23);
             this.TxtUserEmail.TabIndex = 2;
             // 
             // LstUsers
@@ -334,29 +271,20 @@
             this.LstUsers.ItemHeight = 15;
             this.LstUsers.Location = new System.Drawing.Point(30, 30);
             this.LstUsers.Name = "LstUsers";
-            this.LstUsers.Size = new System.Drawing.Size(138, 79);
+            this.LstUsers.Size = new System.Drawing.Size(138, 124);
             this.LstUsers.TabIndex = 0;
             // 
             // TxtUserName
             // 
-            this.TxtUserName.Location = new System.Drawing.Point(245, 30);
+            this.TxtUserName.Location = new System.Drawing.Point(264, 53);
             this.TxtUserName.Name = "TxtUserName";
-            this.TxtUserName.Size = new System.Drawing.Size(226, 23);
+            this.TxtUserName.Size = new System.Drawing.Size(210, 23);
             this.TxtUserName.TabIndex = 2;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(188, 114);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(24, 15);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Rol";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(188, 73);
+            this.label3.Location = new System.Drawing.Point(215, 81);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 15);
             this.label3.TabIndex = 1;
@@ -374,7 +302,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(188, 34);
+            this.label1.Location = new System.Drawing.Point(215, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 15);
             this.label1.TabIndex = 1;
@@ -386,7 +314,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(624, 441);
+            this.ClientSize = new System.Drawing.Size(624, 411);
             this.Controls.Add(this.PnlRol);
             this.Controls.Add(this.PnlFoot);
             this.Controls.Add(this.PnlBasic);
@@ -397,7 +325,6 @@
             this.Text = "Configuración";
             this.Load += new System.EventHandler(this.ConfigForm_Load);
             this.PnlRol.ResumeLayout(false);
-            this.PnlRol.PerformLayout();
             this.PnlFoot.ResumeLayout(false);
             this.PnlBasic.ResumeLayout(false);
             this.PnlBasic.PerformLayout();
@@ -420,18 +347,12 @@
         private TextBox TxtUserName;
         private Label label3;
         private Label label1;
-        private Label label4;
-        private ComboBox comboBox1;
-        private ListBox LstRoles;
-        private Label label2;
         private Button BtnChangePassword;
         private Label label5;
         private FontAwesome.Sharp.IconButton BtnApply;
         private FontAwesome.Sharp.IconButton BtnImport;
         private FontAwesome.Sharp.IconButton BtnExport;
         private FontAwesome.Sharp.IconButton BtnCancel;
-        private FontAwesome.Sharp.IconButton BtnRoleDelete;
-        private FontAwesome.Sharp.IconButton BtnRoleAdd;
         private FontAwesome.Sharp.IconButton BtnUserDelete;
         private FontAwesome.Sharp.IconButton BtnUserAdd;
         private CheckedListBox ChkListOptions;
